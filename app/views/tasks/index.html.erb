@@ -5,14 +5,19 @@
     <% @tasks.each do |task| %>
       <li class="list-group-item">
         <% if task.completed %>
-          <input type="checkbox" checked>
+          <i class="far fa-check-circle"></i>
         <% else %>
-          <input type="checkbox">
+          <i class="far fa-circle"></i>
         <% end %>
         <%= link_to "#{task.title}", task_path(task.id) %>
+        <%= link_to task_path(task.id), method: :delete do%>
+          <i class="far fa-trash-alt"></i>
+        <% end %>
       </li>
     <% end %>
   </ul>
   <hr>
-  <%= link_to 'Add a task', new_task_path %>
+  <%= link_to new_task_path do%>
+    <i class="fas fa-plus"></i> Add a task
+  <% end %>
 </div>

@@ -11,6 +11,13 @@
         <%= t.text_field :details, class: "form-control" %>
       </div>
 
+      <% if task.persisted? %>
+        <div class="form-group">
+          <%= t.label :completed %>
+          <%= t.check_box :completed %>
+        </div>
+      <% end %>
+
       <%= t.submit class: "btn btn-primary" %>
     <% end %>
   </div>
