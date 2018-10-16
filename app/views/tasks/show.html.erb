@@ -1,7 +1,9 @@
  <div class="container">
   <h1><%= @task.title %></h1>
 
-  <p><%= @task.details %></p>
+  <div class="well">
+      <%= @task.details %>
+  </div>
 
   <% if @task.completed %>
     <input type="checkbox" checked>
@@ -12,5 +14,5 @@
   <% end %>
 
   <hr>
-  <%= link_to 'Back to list', tasks_path %>
+  <%= link_to 'Back to list', tasks_path%>
 </div>
